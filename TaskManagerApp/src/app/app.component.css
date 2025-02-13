@@ -1,0 +1,22 @@
+table {
+    width: 100%;
+  }
+  
+  th.mat-header-cell {
+    background-color: #3f51b5;
+    color: white;
+    padding: 8px;
+  }
+  
+  td.mat-cell {
+    padding: 8px;
+  }
+  
+  tr.mat-header-row {
+    background-color: #e0e0e0;
+  }
+  
+  tr.mat-row {
+    background-color: #ffffff;
+  }
+  
