@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Task, TaskDetailsService } from './services/task-details.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,18 +10,31 @@ import { Component } from '@angular/core';
 export class AppComponent {
   
   displayedColumns: string[] = ['Id','Tasktitle', 'Description', 'Duedate','Status','Priority','Edit','Delete'];
-  tasks = [
-    { Id:1,Tasktitle: 1, Description: 'John Doe', Duedate: 'HR' , Status:'Inprogress', Priority:'high'},
-    { Id:2,Tasktitle: 2, Description: 'Jane Smith', Duedate: 'Finance',Status:'Inprogress', Priority:'high' },
-    { Id:3,Tasktitle: 3, Description: 'Robert Brown', Duedate: 'IT',Status:'Inprogress', Priority:'high' },
-    { Id:4,Tasktitle: 4, Description: 'Emily Johnson', Duedate: 'Marketing,',Status:'Inprogress', Priority:'high' }
-  ];
 
+
+  tasks: Task[] = [];
+  
+
+  constructor(private taskService: TaskDetailsService, private route:Router) {}
+
+  ngOnInit() {
+    this.taskService.getTasks().subscribe(data => {
+      this.tasks = data;
+    });
+  }
+
+  
+  deleteTask(id: number) {
+    this.taskService.deleteTask(id);
+    console.log(id ,"deleted")
+  }
   onEditButtonClick(task: any){
     
   }
-  onDeleteButtonClick(task:any) {
+  addTask(){
+    
 
+    this.route.navigate(['/add-task']);
   }
 }
  

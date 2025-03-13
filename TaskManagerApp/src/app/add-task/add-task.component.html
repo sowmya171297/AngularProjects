@@ -1,0 +1,30 @@
+<p>add-task works!</p>
+<h2>Add Task</h2>
+<div>
+<form>
+  <label>Task Title:</label>
+  <input type="text" [(ngModel)]="task.Tasktitle" [ngModelOptions]="{standalone: true}" />
+
+  <label>Description:</label>
+  <input type="text" [(ngModel)]="task.Description" [ngModelOptions]="{standalone: true}"/>
+
+  <label>Due Date:</label>
+  <input type="date" [(ngModel)]="task.Duedate" [ngModelOptions]="{standalone: true}"/>
+
+  <label>Status:</label>
+  <select [(ngModel)]="task.Status" [ngModelOptions]="{standalone: true}">
+    <option>In Progress</option>
+    <option>Completed</option>
+    <option>Pending</option>
+  </select>
+
+  <label>Priority:</label>
+  <select [(ngModel)]="task.Priority" [ngModelOptions]="{standalone: true}">
+    <option>High</option>
+    <option>Medium</option>
+    <option>Low</option>
+  </select>
+
+  <button mat-button color="primary" (click)="addTask()" >Save</button>
+</form>
+</div>

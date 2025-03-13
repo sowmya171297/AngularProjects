@@ -4,54 +4,60 @@
 
     <ng-container matColumnDef="Id">
         <th mat-header-cell *matHeaderCellDef> </th>
-        <td mat-cell *matCellDef="let element"> {{element.Id}} </td>
+        <td mat-cell *matCellDef="let task"> {{task.Id}} </td>
       </ng-container>
     
 
   <!-- Task title Column -->
   <ng-container matColumnDef="Tasktitle">
     <th mat-header-cell *matHeaderCellDef> Task title </th>
-    <td mat-cell *matCellDef="let element"> {{element.Tasktitle}} </td>
+    <td mat-cell *matCellDef="let task"> {{task.Tasktitle}} </td>
   </ng-container>
 
   <!-- Description Column -->
   <ng-container matColumnDef="Description">
     <th mat-header-cell *matHeaderCellDef> Description </th>
-    <td mat-cell *matCellDef="let element"> {{element.Description}} </td>
+    <td mat-cell *matCellDef="let task"> {{task.Description}} </td>
   </ng-container>
 
   <!-- Duedate Column -->
   <ng-container matColumnDef="Duedate">
     <th mat-header-cell *matHeaderCellDef> Duedate </th>
-    <td mat-cell *matCellDef="let element"> {{element.Duedate}} </td>
+    <td mat-cell *matCellDef="let task"> {{task.Duedate}} </td>
   </ng-container>
 
   <ng-container matColumnDef="Status">
     <th mat-header-cell *matHeaderCellDef> Status </th>
-    <td mat-cell *matCellDef="let element"> {{element.Status}} </td>
+    <td mat-cell *matCellDef="let task"> {{task.Status}} </td>
   </ng-container>
 
   <ng-container matColumnDef="Priority">
     <th mat-header-cell *matHeaderCellDef> Priority </th>
-    <td mat-cell *matCellDef="let element"> {{element.Priority}} </td>
+    <td mat-cell *matCellDef="let task"> {{task.Priority}} </td>
   </ng-container>
 
   <ng-container matColumnDef="Edit">
     <th mat-header-cell *matHeaderCellDef> </th>
-    <td mat-cell *matCellDef="let element">
-      <button mat-button color="black" [routerLink]="['/edit-task', element.Tasktitle]">Edit</button>
+    <td mat-cell *matCellDef="let task">
+      <button mat-button color="black" [routerLink]="['/edit-task', task.Tasktitle]">Edit</button>
     </td>
   </ng-container>
 
   <ng-container matColumnDef="Delete">
     <th mat-header-cell *matHeaderCellDef> </th>
-    <td mat-cell *matCellDef="let element">
-      <button mat-button color="black" (click)="onDeleteButtonClick(element)">Delete</button>
+    <td mat-cell *matCellDef="let task">
+      <button mat-button color="black" (click)="deleteTask(task.Id)">Delete</button>
     </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
 </table>
+
+<button  (click)="addTask()">Add Task</button>
+
 </div>
+
 <router-outlet></router-outlet>

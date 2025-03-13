@@ -8,12 +8,15 @@ import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { EditTaskComponent } from './edit-task/edit-task.component';
 import { FormsModule } from '@angular/forms';
+import { AddTaskComponent } from './add-task/add-task.component';
+import { TaskDetailsService } from './services/task-details.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    EditTaskComponent
+    EditTaskComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,7 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     FormsModule
   ],
-  providers: [],
+  providers: [TaskDetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

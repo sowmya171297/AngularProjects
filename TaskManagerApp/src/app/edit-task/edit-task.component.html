@@ -1,29 +1,29 @@
 <h2>Edit Task</h2>
 <div>
-<form *ngIf="task">
-  <label>Task Title:</label>
-  <input type="text" [(ngModel)]="task.Tasktitle" disabled />
+  <form *ngIf="task">
+    <label>Task Title:</label>
+    <input type="text" [(ngModel)]="task.Tasktitle" disabled />
 
-  <label>Description:</label>
-  <input type="text" [(ngModel)]="task.Description" />
+    <label>Description:</label>
+    <input type="text" [(ngModel)]="task.Description" />
 
-  <label>Due Date:</label>
-  <input type="date" [(ngModel)]="task.Duedate" />
+    <label>Due Date:</label>
+    <input type="date" [(ngModel)]="task.Duedate" />
 
-  <label>Status:</label>
-  <select [(ngModel)]="task.Status">
-    <option>In Progress</option>
-    <option>Completed</option>
-    <option>Pending</option>
-  </select>
+    <label>Status:</label>
+    <select [(ngModel)]="task.Status">
+      <option>In Progress</option>
+      <option>Completed</option>
+      <option>Pending</option>
+    </select>
 
-  <label>Priority:</label>
-  <select [(ngModel)]="task.Priority">
-    <option>High</option>
-    <option>Medium</option>
-    <option>Low</option>
-  </select>
+    <label>Priority:</label>
+    <select [(ngModel)]="task.Priority">
+      <option>High</option>
+      <option>Medium</option>
+      <option>Low</option>
+    </select>
 
-  <button mat-button color="primary" (click)="saveChanges()">Save</button>
-</form>
+    <button mat-button color="primary" (click)="saveChanges()">Save</button>
+  </form>
 </div>
