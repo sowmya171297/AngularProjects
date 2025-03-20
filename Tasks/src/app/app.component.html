@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>Palindrome Checker</h2>
+  <input [(ngModel)]="inputText" placeholder="Enter text" />
+  <button (click)="checkPalindrome()">Check</button>
+  <p>{{ result }}</p>
+</div>
+
+<div class="container">
+  <h2>Fibonacci Series Generator</h2>
+  <input type="number" [(ngModel)]="count" placeholder="Enter count" />
+  <button (click)="generateFibonacci()">Generate</button>
+  <p>{{ series.join(', ') }}</p>
+</div>
